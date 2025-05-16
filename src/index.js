@@ -1,4 +1,5 @@
-function displayPoem (response){
+ function displayPoem (response){
+      
       new Typewriter ("#poem", {
       strings: response.data.answer,
 
@@ -17,8 +18,20 @@ function displayPoem (response){
     let context= "You are a romantic poem expert and love to write short poem. Your mission is to generate a 4 line poem in basic html format without including the html tag, make sure to follow the user prompt. Sign the poem with 'RubyGem' inside <strong> element at the end of the poem";
     let prompt=`User prompt: Generate a poem ${promptInput.value}`;
     let apiUrl=`https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+
+    let poemElement= document.querySelector ("#poem")
+    poemElement.innerHTML=`Generating  a ${promptInput.value} Poem`;
     
-    axios.get(apiUrl).then( displayPoem);
+    
+    axios
+    .get(apiUrl)
+    .then(displayPoem)
+    .catch(function (error) {
+    console.log(error);
+  });
     }
+
+    
       let poemFormElement=document.querySelector ("#poem-generator-form");
       poemFormElement.addEventListener("submit", generatePoem);
