@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles.css" />
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Liz AI Poem Generator</title>
   </head>
   <body>
@@ -21,11 +23,13 @@
             autofocus
             required
             autocomplete="off"
-            class="prompt"
+            class ="prompt"
+            id="user-prompt"
           />
-          <input type="submit" class="submit-button" />
+          <input type="submit" class="submit-button"/>
         </form>
-        <div class="poem" id="poem"></div>
+        <div class="poem" id="poem">
+        </div>
       </main>
       <footer>
         This AI project was coded by
