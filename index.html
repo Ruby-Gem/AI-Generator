@@ -1,37 +1,31 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="stylesheet" href="src/styles.css" />
+    <link rel="stylesheet" href="src/styles.css" />
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <title>Liz AI Poem Generator</title>
-  </head >
-  </style>
+  </head>
   <body>
     <div class="container">
       <header>
         <h1>Liz AI Poem Generator</h1>
       </header>
       <main>
-        <form>
+        <form id="poem-generator-form">
           <input
             type="text"
             placeholder="Enter the topic"
             autofocus
             required
             autocomplete="off"
-            class ="prompt"
+            class="prompt"
           />
-          <input type="submit" class="submit-button"/>
+          <input type="submit" class="submit-button" />
         </form>
-        <div class="poem">
-          In a quiet moments, whispers dance, Soft as breezes, Light as chance.
-          <br />
-          Dreams take flight on golden streams, Carried by the sun's bright
-          beams.
-        </div>
+        <div class="poem" id="poem"></div>
       </main>
       <footer>
         This AI project was coded by
@@ -44,5 +38,6 @@
         <a href="https://lizai-generator.netlify.app/"> Netlify </a>
       </footer>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
